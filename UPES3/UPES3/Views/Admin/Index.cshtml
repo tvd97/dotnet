@@ -1,0 +1,115 @@
+﻿@model PagedList.IPagedList<UPES3.Data.Access.account>
+
+@using PagedList.Mvc
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+
+
+<h2>Danh Sách Tài Khoản Sử Dụng Hệ Thống</h2>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Danh Sách Tài Khoản</h6>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <div id="dataTable_wrapper" class="dataTables_wrapper dt-bootstrap4">
+                <!--
+
+                -->
+                <div class="row">
+                    @using (Html.BeginForm("Index", "Admin", FormMethod.Get))
+                    {
+                        <div class="col-lg-12">
+                            <div class="col-lg-4" style="display:inline-flex;">
+                                <input type="text" value="@ViewBag.seaching" name="seach" />
+                                <input type="submit" value="Tìm Kiếm" />
+                            </div>
+                        </div>
+                        <br />
+                    }
+
+                    <div class="col-sm-12">
+                        <div style="margin-right:1px;margin-left:87%;">
+                            <button class="btn-primary" style="background-color:dodgerblue;">Thêm Tài Khoản</button>
+                            <div class="modal fade" id="myModal" role="dialog" data-url="/admin/create"></div>
+                        </div>
+
+                        <table class="table">
+                            <tr>
+                                <th>
+                                    Tên Tài Khoản
+                                </th>
+                                <th>
+                                    Quyền truy Cập
+                                </th>
+                                <th>
+                                    Trạng thái
+                                </th>
+                                <th></th>
+                            </tr>
+
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @item.userName
+                                    </td>
+                                    <td>
+                                        @item.role
+                                    </td>
+
+                                    @if (item.status == 1)
+                                    {
+                                        <td>
+                                            Đang Hoạt Động
+                                        </td>
+                                    }
+                                    else
+                                    {
+                                        <td>
+                                            Vô Hiếu Hóa
+                                        </td>
+                                    }
+
+                                    <td>
+                                       @Html.ActionLink("Cập nhật","edit", new {id=item.userName})
+                                    </td>
+                                </tr>
+                            }
+
+                        </table>
+                        @Html.PagedListPager(Model, page => Url.Action("Index", new { page = page, @seach = @ViewBag.seaching, @style = "magin-left:2px" }))
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script language="JavaScript" type="text/javascript">
+    $(document).ready(function () {
+        $('.btn-primary').click(function () {
+
+            var url = $('#myModal').data('url');
+            console.log(url);
+            $.get(url, function (data) {
+                $("#myModal").html(data);
+                $("#myModal").modal('show');
+            });
+        })
+    });
+
+</script>
+         
+
+

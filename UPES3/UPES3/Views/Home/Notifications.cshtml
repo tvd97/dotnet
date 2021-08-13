@@ -1,0 +1,13 @@
+﻿@model List<UPES3.Data.Access.notification>
+
+@{
+    ViewBag.Title = "Thông Báo Chung";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@foreach(var item in Model)
+            {
+                <li>
+                    <a href="/Thông-báo/@item.metaTitle-@item.idNotification" > @item.title</a> <small>@DateTime.Parse(item.dateCreat.ToString()).ToShortDateString()</small>
+                </li>
+            }

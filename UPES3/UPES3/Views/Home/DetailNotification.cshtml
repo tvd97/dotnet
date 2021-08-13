@@ -1,0 +1,39 @@
+﻿@model UPES3.Data.Access.notification
+
+@{
+    ViewBag.Title = "DetailNotification";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    string[] arrContent = Model.content.Split('-');
+ 
+}
+
+
+<div>
+    <h4>@Model.title <small>@DateTime.Parse(Model.dateCreat.ToString()).ToShortDateString()</small></h4>
+    <hr />
+    <p>Nội dung thông báo</p>
+    <hr />
+    <dl class="dl-horizontal">
+       
+        @for(int i=1;i<arrContent.Length;i++)
+            {
+                <p>- @arrContent[i]</p>
+            }
+    <div class="alert alert-success" role="alert">
+        <strong>File đính kèm:</strong>
+        <br>
+        <a href="" title="Tải file đính kèm">@Model.FileName</a>
+
+        <a href="" title="Tải file đính kèm"><i class='far fa-arrow-alt-circle-down'></i></a>
+        
+        <a id="popup" title="Xem nội dung file" data-title="@Model.metaTitle" href=""><i class='fab fa-readme'></i></a>
+    </div>
+
+      
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.idNotification }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

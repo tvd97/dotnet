@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31105.61
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UPES3", "UPES3\UPES3.csproj", "{AF6C76BE-B12C-4F45-8419-E1FE3D988196}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UPES3.Data", "UPES3.Data\UPES3.Data.csproj", "{C5CDCC50-839B-4D27-A65C-69225135C73F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{BE6CFB96-489C-4E6E-BCD6-1118ED1CCF67}"
+	ProjectSection(SolutionItems) = preProject
+		README.MD = README.MD
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AF6C76BE-B12C-4F45-8419-E1FE3D988196}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF6C76BE-B12C-4F45-8419-E1FE3D988196}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF6C76BE-B12C-4F45-8419-E1FE3D988196}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF6C76BE-B12C-4F45-8419-E1FE3D988196}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5CDCC50-839B-4D27-A65C-69225135C73F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5CDCC50-839B-4D27-A65C-69225135C73F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5CDCC50-839B-4D27-A65C-69225135C73F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5CDCC50-839B-4D27-A65C-69225135C73F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E0DCC29F-5877-4DC2-864B-0844C4FC10E3}
+	EndGlobalSection
+EndGlobal

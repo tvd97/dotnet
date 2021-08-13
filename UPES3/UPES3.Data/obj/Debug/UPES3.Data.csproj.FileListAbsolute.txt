@@ -1,0 +1,16 @@
+D:\dotNet\UPES3\UPES3.Data\bin\Debug\UPES3.Data.dll.config
+D:\dotNet\UPES3\UPES3.Data\bin\Debug\UPES3.Data.dll
+D:\dotNet\UPES3\UPES3.Data\bin\Debug\UPES3.Data.pdb
+D:\dotNet\UPES3\UPES3.Data\bin\Debug\EntityFramework.dll
+D:\dotNet\UPES3\UPES3.Data\bin\Debug\EntityFramework.SqlServer.dll
+D:\dotNet\UPES3\UPES3.Data\bin\Debug\PagedList.dll
+D:\dotNet\UPES3\UPES3.Data\bin\Debug\PagedList.Mvc.dll
+D:\dotNet\UPES3\UPES3.Data\bin\Debug\EntityFramework.xml
+D:\dotNet\UPES3\UPES3.Data\bin\Debug\EntityFramework.SqlServer.xml
+D:\dotNet\UPES3\UPES3.Data\bin\Debug\PagedList.xml
+D:\dotNet\UPES3\UPES3.Data\bin\Debug\PagedList.Mvc.xml
+D:\dotNet\UPES3\UPES3.Data\obj\Debug\UPES3.Data.csprojAssemblyReference.cache
+D:\dotNet\UPES3\UPES3.Data\obj\Debug\UPES3.Data.csproj.CoreCompileInputs.cache
+D:\dotNet\UPES3\UPES3.Data\obj\Debug\UPES3.Data.csproj.CopyComplete
+D:\dotNet\UPES3\UPES3.Data\obj\Debug\UPES3.Data.dll
+D:\dotNet\UPES3\UPES3.Data\obj\Debug\UPES3.Data.pdb

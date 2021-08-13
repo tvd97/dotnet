@@ -1,0 +1,154 @@
+﻿@{
+    string role = "isStudent";
+    if (Session["Role"] == null)
+    {
+        role = "isStudent";
+    }
+    else
+    {
+        role = (string)Session["Role"];
+    }
+
+}
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <script src="~/Scripts/jquery-3.6.0.min.js"></script>>
+
+    <title>@ViewBag.Title</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="~/Content/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Custom styles for this template -->
+
+    <link href="~/Content/css/simple-sidebar.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <style>
+        .nav-item {
+            width: 150px;
+            padding-left: 1px;
+            padding-right: 1px;
+            padding: inherit;
+            background: white;
+            margin-right: 2px;
+            margin-left: 1px;
+            text-align: center;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <div class="d-flex" style=" height:150px;background-color:white">
+        <a class="nav-link" href="#" style="display:inline-flex">
+            <img src="~/Image/Logo_Đại_học_Thể_dục_Thể_thao_Đà_Nẵng.png" />
+            <div style="margin-left:50px;margin-top:10px;">
+                <h3>Bộ Văn Hóa Thể Thao Và Du Lịch</h3>
+                <h3>TRƯỜNG ĐẠI HỌC THỂ DỤC THỂ THAO ĐÀ NẴNG</h3>
+                <h3>Phòng Nghiên Cứu Khoa Học</h3>
+            </div>
+        </a>
+    </div>
+    <div class="d-flex" id="wrapper">
+        @if (role == "isStudent")
+        {
+            @RenderPage("_isNull.cshtml")
+        }
+        else if (role == "isAdmin")
+        {
+
+        }
+        else if (role == "isManage")
+        {
+            @RenderPage("_isManage.cshtml")
+        }
+        else if (role == "isUser")
+        {
+            @RenderPage("_isLecturer.cshtml")
+        }
+
+
+        <!-- Sidebar -->
+        <!-- /#sidebar-wrapper -->
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+
+            <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+                @if (role == "isAdmin")
+                {
+
+                }
+                else
+                {
+                    <button class="btn btn-primary" id="menu-toggle">Menu</button>
+                }
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#"><i class='fas fa-home'></i> Trang Chủ <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/Thông-báo"><i class='fas fa-bell'></i> Thông báo</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#"><i class='fas fa-calendar-alt'></i> Lịch Báo Cáo</a>
+                        </li>
+                        @if (Session["USER"] == null)
+                        {
+                            <li class="nav-item active">
+                                <a class="nav-link" href="@Url.Action("index","login")"><i class='fas fa-user-tie'></i> Đăng Nhập</a>
+                            </li>
+                        }
+                        else
+                        {
+                            <li class="nav-item active">
+                                <a class="nav-link" href="@Url.Action("Logout","Login")"><i class='fas fa-arrow-right'></i> Thoát</a>
+                            </li>
+                        }
+
+
+                    </ul>
+                </div>
+            </nav>
+
+            <div class="container-fluid">
+                @RenderBody()
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+    <!-- Bootstrap core JavaScript -->
+    <script src="~/Content/vendor/jquery/jquery.min.js"></script>
+    <script src="~/Content/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+
+    <!-- Menu Toggle Script -->
+    <script>
+        $("#menu-toggle").click(function (e) {
+            e.preventDefault();
+            $("#wrapper").toggleClass("toggled");
+        });</script>
+
+
+    @Scripts.Render("~/bundles/jquery")
+
+    <script src="~/Scripts/bootstrap.js"></script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,97 @@
+﻿@model UPES3.Models.LoginModel.LoginModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Đăng Nhập - Đại Học Thể Dục Thể Thao</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/aja/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!------ Include the above in your HEAD tag ---------->
+    <style>
+        body {
+            margin-top: 150px;
+            padding: 0;
+            background-color: slategray;
+        }
+
+        #login .container #login-row #login-column #login-box {
+            margin-top: 0px;
+            max-width: 600px;
+            height: 380px;
+            border: 1px solid #9C9C9C;
+            background-color: #d6d6d6;
+        }
+
+        .text-lable {
+            color: black;
+            font-family: Arial;
+        }
+
+        #login .container #login-row #login-column #login-box #login-form {
+            margin-top: 5px;
+            padding: 20px;
+        }
+
+            #login .container #login-row #login-column #login-box #login-form #register-link {
+                margin-top: -85px;
+            }
+
+        .btn {
+            margin-left: 40%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="login">
+        <div class="container">
+
+            <div id="login-row" class="row justify-content-center align-items-center">
+
+                <div id="login-column" class="col-md-6" style="display: inline-flex;margin-right: 35%;">
+                    <img style=" height: 380px; width: 350px; " src="~/Image/logo_fpe.png" />
+                    <div id="login-box" class="col-md-12">
+                        @using (Html.BeginForm("Login", "Login", FormMethod.Post))
+                        {
+
+                            <h3 class="text-center text-lable">Đăng Nhập</h3>
+                            <div style="color:red"> @Html.ValidationSummary(false, "", "error")</div>
+
+                            <div class="form-group">
+                                <label for="username" class="text-lable">Tài Khoản</label><br>
+                                @Html.TextBoxFor(m => m.username, new { @class = "form-control", @required = "Nhập Tài Khoản", @placeholder = "Nhập Tài Khoản" })
+
+                            </div>
+                            <div class="form-group">
+                                <label for="password" class="text-lable">Mật Khẩu</label><br>
+                                @Html.PasswordFor(m => m.password, new { @class = "form-control", @value = "admin", @required = "Nhập mật khẩu", @placeholder = "Nhập Mật Khẩu" })
+
+                            </div>
+                            <div class="form-group" style="display:inline-flex">
+                                <label for="remember-me" class="text-lable">
+                                    @Html.CheckBoxFor(m => m.remember)Nhớ Mật Khẩu
+                                </label>
+                            </div>
+                            <div class="form-group" style="display:block;margin-bottom:5px;">
+                                <button type="submit" name="submit" class="btn btn-info btn-md">Đăng Nhập</button>
+                                <div style="text-align:center;color: darkred">
+                                    <a href="@Url.Action("Index","Home")">Về Trang Sinh Viên</a>
+                                </div>
+
+                            </div>
+                        }
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
