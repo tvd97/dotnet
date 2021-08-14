@@ -60,6 +60,7 @@
         </a>
     </div>
     <div class="d-flex" id="wrapper">
+
         @if (role == "isStudent")
         {
             @RenderPage("_isNull.cshtml")
@@ -99,7 +100,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
                         <li class="nav-item active">
-                            <a class="nav-link" href="#"><i class='fas fa-home'></i> Trang Chủ <span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="/Trang-Chủ"><i class='fas fa-home'></i> Trang Chủ <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item active">
                             <a class="nav-link" href="/Thông-báo"><i class='fas fa-bell'></i> Thông báo</a>
@@ -150,5 +151,12 @@
 
     <script src="~/Scripts/bootstrap.js"></script>
     @RenderSection("scripts", required: false)
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#.link-form').click(function () {
+                window.open('https://drive.google.com/drive/u/0/my-drive', '_blank');
+            });
+        });
+    </script>
 </body>
 </html>

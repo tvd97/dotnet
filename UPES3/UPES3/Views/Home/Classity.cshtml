@@ -1,0 +1,41 @@
+﻿@model IEnumerable<UPES3.Data.Access.classityType>
+
+@{
+    ViewBag.Title = "Classity";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Classity</h2>
+
+<table class="table" style="text-align:center;border:solid 0.5px">
+    <tr>
+        <th>
+            Mã Loại Nhiệm Vụ
+        </th>
+        <th>
+            Tên Loại Nhiệm Vụ
+        </th>
+        <th>
+            Điểm Số Giảng Viên
+        </th>
+        <th>
+            Điểm Số Sinh Viên
+        </th>
+        <th>
+            Số Giờ Quy Đổi
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>@item.idClassity</td>
+    <td>@item.name</td>
+    <td>@item.pointLect</td>
+    <td>@item.pointStd</td>
+    <td>@item.timeNum</td>
+
+
+</tr>
+}
+
+</table>

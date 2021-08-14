@@ -4,10 +4,14 @@
     ViewBag.Title = "Thông Báo Chung";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
+<div class="page-title" >
+    <i class='far fa-bell'></i>
+        <strong>THÔNG BÁO</strong>
+</div>
+<hr />
 @foreach(var item in Model)
             {
-                <li>
-                    <a href="/Thông-báo/@item.metaTitle-@item.idNotification" > @item.title</a> <small>@DateTime.Parse(item.dateCreat.ToString()).ToShortDateString()</small>
+                <li style="list-style:none; margin-left: 50px;">
+                    <a href="/Thông-báo/@item.metaTitle-@item.idNotification" ><i class='fas fa-list'>  </i> @item.title</a> <small>[@DateTime.Parse(item.dateCreat.ToString()).ToShortDateString()]</small>
                 </li>
             }

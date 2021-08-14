@@ -75,6 +75,7 @@
     <Compile Include="Access\statement.cs" />
     <Compile Include="Access\type.cs" />
     <Compile Include="LogicLayer\AdminDLL.cs" />
+    <Compile Include="LogicLayer\ClassityDLL.cs" />
     <Compile Include="LogicLayer\HashMD5.cs" />
     <Compile Include="LogicLayer\Login.cs" />
     <Compile Include="LogicLayer\NotificationDLL.cs" />

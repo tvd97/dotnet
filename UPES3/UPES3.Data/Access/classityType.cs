@@ -26,7 +26,11 @@ namespace UPES3.Data.Access
         [Column(TypeName = "ntext")]
         public string name { get; set; }
 
-        public double? value { get; set; }
+        public double? timeNum { get; set; }
+
+        public double? pointStd { get; set; }
+
+        public double? pointLect { get; set; }
 
         public virtual type type { get; set; }
 
