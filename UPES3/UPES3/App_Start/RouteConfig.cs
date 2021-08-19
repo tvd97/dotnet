@@ -28,6 +28,11 @@ namespace UPES3
                url: "Trang-Chủ",
                defaults: new { controller = "Home", action = "index", id = UrlParameter.Optional }
            );
+            routes.MapRoute(
+               name: "Thongtin",
+               url: "Tài-Khoản/Thông-tin",
+               defaults: new { controller = "Account", action = "Info", id = UrlParameter.Optional }
+           );
 
             routes.MapRoute(
                 name: "Default",

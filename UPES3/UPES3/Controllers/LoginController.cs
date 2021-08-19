@@ -29,6 +29,7 @@ namespace UPES3.Controllers
                     var ses = signin.GetAccount(model.username);
                     Session["user"] = ses.userName;
                     Session["Role"] = ses.role;
+                    ConstantSession.USER = ses.userName;
                     Session.Add(ConstantSession.USER, ses);
                     Session.Timeout = 30;
                     FormsAuthentication.SetAuthCookie(model.username, false);
